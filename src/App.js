@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Tweet from "./Tweet";
 import Envelope from './Envelope'
+import CreditCard from './CreditCard'
 
 var data = {
   tweet: {
@@ -27,6 +28,22 @@ var data = {
         city: "Boston",
         stamp:"https://res.cloudinary.com/teepublic/image/private/s--kDZKY-ys--/t_Preview/b_rgb:191919,c_limit,f_jpg,h_630,q_90,w_630/v1460567293/production/designs/477129_1.jpg"
     },
+  },
+  credit: {
+    bank: "hcbs",
+    name: "Nikola Tesla",
+    expiry: "11/23",
+    number: "1188 0033 4477 0033"
+  },
+  poster: {
+    img: "",
+    head: "",
+    detail: ""
+  },
+  emailmsg: {
+    sender: "React Newsletter",
+    subject: "React Newsletter - Issue 26",
+    message: "React Newsletter Issue 26 - 15 July 2016 Read this issue on the web http://www.reactjsnews.com/issues/xyDWQ"
   }
 };
 
@@ -44,6 +61,7 @@ export default class App extends Component {
         </div>
         <Tweet tweet={data.tweet} />
         <Envelope mail={data.envelope} />
+        <CreditCard />
       </div>
     );
   }
