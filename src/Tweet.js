@@ -4,20 +4,23 @@ import './tweet.css';
 
 function Tweet({ tweet }) {
   return (
-    <div className="tweet">
-      <Avatar hash={tweet.gravatar}/>
-      <div className="content">
-        <Author author={tweet.author}/>
-        <Time time={tweet.timestamp}/>
-        <Message text={tweet.message}/>
-        <div className="buttons">
-          <ReplyButton/>
-          <RetweetButton count={tweet.retweets}/>
-          <LikeButton count={tweet.likes}/>
-          <MoreOptionsButton/>
+      <>
+        <h2 class="display-4">tweet</h2>
+        <div className="tweet">
+        <Avatar hash={tweet.gravatar}/>
+        <div className="content">
+            <Author author={tweet.author}/>
+            <Time time={tweet.timestamp}/>
+            <Message text={tweet.message}/>
+            <div className="buttons">
+            <ReplyButton/>
+            <RetweetButton count={tweet.retweets}/>
+            <LikeButton count={tweet.likes}/>
+            <MoreOptionsButton/>
+            </div>
         </div>
-      </div>
-    </div>
+        </div>
+    </>
   );
 }
 
