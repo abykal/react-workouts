@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Tweet from "./Tweet";
 import Envelope from './Envelope'
 import CreditCard from './CreditCard'
+import GithubFiles from './GithubFiles'
+
 
 var data = {
   tweet: {
@@ -44,7 +46,36 @@ var data = {
     sender: "React Newsletter",
     subject: "React Newsletter - Issue 26",
     message: "React Newsletter Issue 26 - 15 July 2016 Read this issue on the web http://www.reactjsnews.com/issues/xyDWQ"
-  }
+  },
+  files: [
+    {
+    id: 1,
+    name: 'src',
+    type: 'folder',
+    updated_at: "2016-07-11 21:24:00",
+    latestCommit: {
+    message: 'Initial commit'
+    }
+    },
+    {
+    id: 2,
+    name: 'tests',
+    type: 'folder',
+    updated_at: "2016-07-11 21:24:00",
+    latestCommit: {
+    message: 'Initial commit'
+    }
+    },
+    {
+    id: 3,
+    name: 'README',
+    type: 'file',
+    updated_at: "2016-07-18 21:24:00",
+    latestCommit: {
+    message: 'Added a readme'
+    }
+    },
+    ]
 };
 
 export default class App extends Component {
@@ -62,6 +93,7 @@ export default class App extends Component {
         <Tweet tweet={data.tweet} />
         <Envelope mail={data.envelope} />
         <CreditCard />
+        <GithubFiles files={data.files} />
       </div>
     );
   }

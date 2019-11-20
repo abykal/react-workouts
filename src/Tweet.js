@@ -5,7 +5,7 @@ import './tweet.css';
 function Tweet({ tweet }) {
   return (
       <>
-        <h2 class="display-4">tweet</h2>
+        <h2 className="display-4">tweet</h2>
         <div className="tweet">
         <Avatar hash={tweet.gravatar}/>
         <div className="content">
