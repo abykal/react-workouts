@@ -1,0 +1,25 @@
+.envelope {
+    border: 1px solid #ccc;
+    width: 564px;
+    height: 288px;
+    padding: 10px;
+}
+
+.mail {
+    font-size: 14px;
+    line-height: 6px;
+}
+
+.stamp{
+    width: 90px;
+    height: 90px;
+    right: 0;
+}
+
+.to {
+    align-self: center;
+}
+
+.flotleft {
+    left: 0;
+}
