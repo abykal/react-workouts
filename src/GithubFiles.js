@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'; 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export default class GithubFiles extends Component {
@@ -44,10 +44,54 @@ FileList.propTypes = {
 
 const FileListItem = ({ file }) => (
     <tr className="file-list-item" key={file.id}>
-        <td className="file-name">{file.name}</td>
+        <FileName file={file} />
+        <CommitMessage commit={file.latestCommit} />
     </tr>
 )
 
 FileListItem.propTypes = {
     file: PropTypes.object.isRequired
 }
+
+
+// File Icon
+const FileIcon = ({ file }) => {
+    let icon = 'fa-file-text-o'
+    if(file.type === 'folder') {
+        icon = 'fa-folder'
+    }
+
+    return (
+        <td className="file-icon">
+            <FontAwesomeIcon icon={`fa ${icon}`} />
+        </td>
+    )
+}
+
+FileIcon.propTypes = {
+    file: PropTypes.object.isRequired
+}
+
+
+// File Name
+const FileName = ({ file }) => (
+    <>
+        <FileIcon file={file} />
+        <td className="file-name">{file.name}</td>
+    </>
+)
+FileName.propTypes = {
+    file: PropTypes.object.isRequired
+}
+
+
+// Commit Message
+const CommitMessage = ({ commit }) => (
+    <td className="commit-message">
+        {commit.message}
+    </td>
+)
+CommitMessage.propTypes = {
+    commit: PropTypes.object.isRequired
+}
+
