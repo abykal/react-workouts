@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import Time from './Time';
 import './tweet.css';
 
 function Tweet({ tweet }) {
@@ -49,14 +49,14 @@ function Author({ author }) {
   );
 }
 
-const Time = ({ time }) => {
-  const timeString = moment(time).fromNow();
-  return (
-    <span className="time">
-      {timeString}
-    </span>
-  );
-};
+// const Time = ({ time }) => {
+//   const timeString = moment(time).fromNow();
+//   return (
+//     <span className="time">
+//       {timeString}
+//     </span>
+//   );
+// };
 
 const ReplyButton = () => (
   <i className="fa fa-reply reply-button"/>
